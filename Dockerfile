@@ -16,7 +16,7 @@ COPY . .
 RUN npm run build --configuration=production
 
 # Utiliser l'image Nginx pour servir l'application
-FROM nginx:lastest
+FROM nginx:latest
 
 # Copier le fichier de configuration Nginx personnalisé
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
