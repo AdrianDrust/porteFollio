@@ -1,0 +1,14 @@
+<div class="project-card" [ngClass]="{'image-right': imagePosition === 'right', 'image-left': imagePosition === 'left'}">
+    <div class="project-images">
+      <img [src]="largeImage" alt="Large Project Image" class="large-image">
+    </div>
+    <div class="project-details">
+      <img [src]="smallImage" alt="Small Logo Image" class="small-image">
+      <h3>{{ projectName }}</h3>
+      <p>{{ description }}</p>
+      <ul>
+        <li *ngFor="let feature of features">{{ feature }}</li>
+      </ul>
+    </div>
+  </div>
+  

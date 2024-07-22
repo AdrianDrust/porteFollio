@@ -1,0 +1,88 @@
+.project-card {
+  display: flex;
+  align-items: flex-start;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 960px;
+}
+
+.project-images {
+  width: 70%;
+  position: relative;
+  padding: 20px;
+}
+
+.large-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.small-image {
+  top: 20px;
+  left: 10px;
+  width: 110px;
+}
+
+.project-details {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.project-details h3 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.project-details ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-details li {
+  background: #f1f1f1;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+.image-right .project-images {
+  order: 2; /* Assurez-vous que l'image est affichée à droite */
+}
+
+.image-right .project-details {
+  order: 1; /* Assurez-vous que les détails sont affichés à gauche */
+}
+
+.image-left .project-images {
+  order: 1; /* Assurez-vous que l'image est affichée à gauche */
+}
+
+.image-left .project-details {
+  order: 2; /* Assurez-vous que les détails sont affichés à droite */
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+  }
+  
+  /* .project-images, .project-details {
+    width: 100%;
+  } */
+
+  .project-images {
+    display:none;
+  }
+
+  .small-image {
+    top: 5px; /* Adjust position for mobile view */
+  }
+}

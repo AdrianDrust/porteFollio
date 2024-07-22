@@ -1,0 +1,55 @@
+.slider {
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider::before,
+.slider::after {
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 200px; /* These pseudo-elements might be used for aesthetic overlays */
+    top: 0;
+    z-index: 2;
+    /*background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);*/
+}
+
+.slider::after {
+    right: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(250px * 20); /* Adjust based on the actual number of slides */
+    animation: scroll 40s linear infinite; /* Animation for continuous scroll */
+}
+
+.slide {
+    height: 100px;
+    width: 250px;
+    display: flex;
+    justify-content: center; /* Center the content within each slide */
+    align-items: center;
+}
+
+.slide img {
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%;
+    max-width: 100%; /* Ensure images fit within the slide */
+    object-fit: contain;
+}
+
+/* Keyframes for scrolling animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 10)); /* Ensure this matches the number of visible slides */ }
+}
+

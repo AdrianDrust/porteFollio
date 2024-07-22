@@ -1,0 +1,41 @@
+.container {
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Arrange les enfants en colonne */
+    align-items: center; /* Centre horizontalement les enfants */
+    height: 100%; /* Assurez-vous que le conteneur prend toute la hauteur de la fenêtre */
+    width: 100%; /* Prend toute la largeur disponible */
+}
+
+img {
+    height: 4rem;
+    width: 12rem;
+    object-fit: cover; /* Assure que l'image couvre entièrement les dimensions sans être déformée */
+  }
+
+  .row-container {
+    display: flex; /* Active Flexbox pour cette div aussi */
+    flex-direction: row; /* Arrange les enfants en ligne */
+    width: 100%; /* Prend toute la largeur du conteneur parent */
+    justify-content: center; /* Centre les enfants horizontalement */
+    align-items: center; /* Centre les enfants verticalement */
+}
+
+.roundedBox {
+  border: 2px solid #333; /* Couleur de bordure sombre pour une bonne visibilité */
+  border-radius: 20px; /* Rayon arrondi pour les angles */
+  padding: 10px; /* Espacement entre le texte et la bordure */
+  margin: 10px; /* Espacement autour de l'élément pour éviter que les éléments soient trop proches */
+  background-color: #f9f9f9; /* Couleur de fond légère */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet de profondeur */
+  display: inline-block; /* Assure que la boîte s'adapte à la taille du contenu */
+}
+
+
+@media (max-width: 1100px) {
+  .row-container {
+    display: flex; /* Active Flexbox pour cette div aussi */
+    flex-direction: column; /* Arrange les enfants en ligne */
+    width: 100%; /* Prend toute la largeur du conteneur parent */
+    /*justify-content: center; /* Centre les enfants horizontalement */
+    /* align-items: center;  Centre les enfants verticalement */
+  }}

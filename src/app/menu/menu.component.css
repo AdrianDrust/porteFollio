@@ -1,0 +1,133 @@
+.menu-titre-principal {
+  color: white;
+  font-weight: bold;
+  font-size: 50px; /* Ajustez la taille de la police selon le besoin */
+  margin-bottom: 10px; /* Espace entre le titre principal et secondaire */
+  display: inline-block; /* Permet de mieux contrôler le flux du texte */
+  text-align: center; /* Alignement du texte */
+}
+
+
+.menu-titre-principal .sub-title {
+  display: block; /* Affiche le sous-titre sur une nouvelle ligne */
+  text-align: center;
+}
+
+.menu-titre-secondaire {
+  color: white;
+  font-style: italic;
+  font-size: 25px; /* Taille plus petite pour le sous-titre */
+  margin-bottom: 20px; /* Espace avant le bouton */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    height: 100%; /* Hauteur de 100% de la vue */
+    text-align: center;
+  }
+
+
+  /*
+  .container-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }*/
+
+  .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    gap: 15px;
+}
+
+  .container-cards > * { /* Sélectionne tous les enfants directs du conteneur */
+    margin-bottom: 20px; /* Ajustez cette valeur selon vos besoins */
+}
+
+.section {
+  padding-top:80px;
+}
+
+
+.custom-button {
+  background-color: white; /* Fond blanc */
+  border: 2px solid transparent; /* Bordure transparente pour l'effet de hover */
+  color: #003d82; /* Texte bleu */
+  padding: 5px 15px; /* Agrandir le padding pour un bouton plus grand */
+  border-radius: 40px; /* Bords arrondis */
+  display: flex;
+  align-items: center; /* Alignement vertical des éléments à l'intérieur */
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease; /* Transition pour le hover */
+  box-shadow: none; /* Pas d'ombre initialement */
+}
+
+
+
+.custom-button:hover {
+  /*border-color: #0056b3; /* Bordure bleue au survol */
+  box-shadow: 0 0 10px #ffffff; /* Ombre légère bleue autour du bouton */
+}
+
+.button-text {
+  margin-right: 10px; /* Espace entre le texte et l'image */
+  font-size: 18px; /* Ajuster la taille du texte */
+}
+
+.button-avatar {
+  width: 50px; /* Taille de l'image ajustée */
+  height: 50px; /* Taille de l'image ajustée */
+  border-radius: 50%; /* Rendre l'image parfaitement ronde */
+  object-fit: cover; /* S'assurer que l'image couvre bien la zone */
+}
+
+  .background-grid {
+    position: relative; /* Essentiel pour le positionnement absolu des enfants */
+    width: 100%; /* Assurez-vous que la taille est définie */
+    height: auto; /* Ou une hauteur fixe selon le besoin */
+}
+
+.grid-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    -webkit-mask-image: url('../../assets/svg/grid.svg'); /* SVG pour le masque */
+    mask-image: url('../../assets/svg/grid.svg'); /* SVG pour le masque */
+    z-index: 0; /* Assurez-vous qu'il est en dessous du contenu */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Plus élevé pour être au-dessus de la grille */
+    color: white; /* Styles de texte, etc. */
+    padding: 20px;
+}
+
+
+.global-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.app-carrousel {
+  max-width: 100%; /* Limite la largeur à celle du conteneur */
+  overflow: hidden; /* Cache tout contenu qui dépasse */
+}

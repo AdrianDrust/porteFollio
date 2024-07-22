@@ -1,0 +1,22 @@
+:root {
+    --main-bg-color-start: rgb(0, 85, 255);
+    --main-bg-color-end: rgb(0, 31, 94);
+    --main-text-color: rgb(28, 28, 28);
+    --secondary-text-color: rgb(255, 255, 255);
+    --highlight-color: rgb(255, 188, 0);
+  }
+  
+  .menu, body {
+    background: linear-gradient(180deg, var(--main-bg-color-end), var(--main-bg-color-start));
+    color: var(--main-text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .formation {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }

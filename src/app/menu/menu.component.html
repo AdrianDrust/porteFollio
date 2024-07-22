@@ -1,0 +1,92 @@
+<div class="global-container">
+
+    <div class="menu">
+        <app-navbar></app-navbar>
+        <div class="container">
+
+            <div class="background-grid">
+                <div class="grid-mask">
+                    <!-- SVG ici si vous intégrez directement dans le HTML, sinon il sera en CSS -->
+                </div>
+                <div class="content">
+                    <!-- Tout votre contenu ici -->
+                    <div class="container background-grid">
+                        <h1 class="menu-titre-principal">Architecte Développeur <span
+                                class="sub-title">d'application</span>
+                        </h1>
+
+                        <div class="menu-titre-secondaire">Spécialisation Intelligence Artificielle</div>
+                        <section class="section"></section>
+                        <button class="custom-button">
+                            <span class="button-text">Réserver un appel avec Adrien</span>
+                            <img src="https://www.larochellegc.com/wp-content/uploads/2022/04/IntelligenceArtificielleetattentes-925x590-c-center.jpg"
+                                alt="" class="button-avatar">
+                        </button>
+                        <section class="section"></section>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container-cards">
+                <app-singlecard className="iCard-style3"
+                    imageUrl="/assets/img/radiographie.webp"
+                    cardTitle="" imageAlt="" linkUrl="#" linkText="Read Full"
+                    paragraphText="Mon text"></app-singlecard>
+                <app-singlecard className="iCard-style3"
+                    imageUrl="/assets/img/immobilier.png"
+                    cardTitle="" imageAlt="Beautiful Cloud Image" linkUrl="#" linkText="Read Full"
+                    paragraphText="Mon text"></app-singlecard>
+                <app-singlecard className="iCard-style3"
+                    imageUrl="/assets/img/ecommerce.webp"
+                    cardTitle="" imageAlt="Beautiful Cloud Image" linkUrl="#" linkText="Read Full"
+                    paragraphText="Mon text"></app-singlecard>
+            </div>
+            <div class="container-cards">
+                <app-singlecard className="iCard-style3"
+                    imageUrl="/assets/img/sheduleEmployee.webp"
+                    cardTitle="" imageAlt="" linkUrl="#" linkText="Read Full"
+                    paragraphText="Mon text"></app-singlecard>
+                <app-singlecard className="iCard-style3"
+                    imageUrl="/assets/img/taxidriver.webp"
+                    cardTitle="" imageAlt="Beautiful Cloud Image" linkUrl="#" linkText="Read Full"
+                    paragraphText="Mon text"></app-singlecard>
+                <app-singlecard className="iCard-style3"
+                    imageUrl="/assets/img/musique.webp"
+                    cardTitle="" imageAlt="Beautiful Cloud Image" linkUrl="#" linkText="Read Full"
+                    paragraphText="Mon text"></app-singlecard>
+            </div>
+
+            <div class="app-carrousel">
+                <app-caroussel></app-caroussel>
+            </div>
+
+        </div>
+
+        <!-- 
+   <app-cards></app-cards>
+   -->
+
+    </div>
+
+
+    <div class="formation">
+        <section class="section"></section>
+        <div class="formation">
+            <app-formation></app-formation>
+        </div>
+
+        <div class="formation">
+            <section class="section"></section>
+            <app-experience></app-experience>
+        </div>
+    </div>
+    <!--
+    -->
+    <div class="formation">
+        <section class="section"></section>
+        <app-contact></app-contact>
+    </div>
+
+
+</div>

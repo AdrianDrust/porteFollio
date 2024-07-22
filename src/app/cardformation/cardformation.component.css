@@ -1,0 +1,27 @@
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+    width: 300px; /* Définir une largeur fixe pour la cohérence */
+    height: auto; /* Hauteur automatique pour ajuster le contenu */
+    min-height: 200px; /* Hauteur minimale pour l'uniformité */
+    overflow: hidden; /* Cache le contenu qui dépasse les dimensions définies */
+    word-wrap: break-word; /* Assure que le texte ne déborde pas */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+h3, h4, p { /* Modification pour inclure h4 */
+    margin: 10px 0;
+    padding: 0 10px; /* Ajout d'un padding pour un meilleur contrôle du texte */
+}
+
+h3, h4 {
+    text-align: center;
+}

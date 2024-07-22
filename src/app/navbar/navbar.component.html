@@ -1,0 +1,24 @@
+<nav>
+    <div class="logo" [class.open]="isOpen">
+      <img src="https://www.larochellegc.com/wp-content/uploads/2022/04/IntelligenceArtificielleetattentes-925x590-c-center.jpg" alt="Logo Image">
+    </div>
+    <div class="hamburger" [class.is-open]="isOpen" (click)="toggleMenu()">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <ul class="nav-links" [class.open]="isOpen">
+      <li><a href="#">Mes projets</a></li>
+      <li><a href="#">Ma formation</a></li>
+      <li><a href="#">Mon expérience</a></li>
+      <li class="is-displayed"><a href="#">Me contacter</a></li>
+      <button class="custom-button is-displayed-button">
+        <span class="button-text">Me contacter</span>
+        <!--
+        <img src="https://www.larochellegc.com/wp-content/uploads/2022/04/IntelligenceArtificielleetattentes-925x590-c-center.jpg"
+            alt="" class="button-avatar">
+      -->
+    </button>
+    </ul>
+      </nav>
+<section class="section"></section>
