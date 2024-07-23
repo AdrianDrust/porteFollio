@@ -36,12 +36,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ghcr.io/${{ env.REPO_OWNER_LC }}/${{ env.REPO_NAME_LC }}:latest
-
-      - name: Display Last Three Characters of Secrets
-        run: |
-          echo "DEPLOY_HOST last 3 chars: ${${{ secrets.DEPLOY_HOST }}: -3}"
-          echo "DEPLOY_USERNAME last 3 chars: ${${{ secrets.DEPLOY_USERNAME }}: -3}"
-          echo "DEPLOY_KEY last 3 chars: ${${{ secrets.DEPLOY_KEY }}: -3}"
       
       - name: Copy files to remote server
         uses: appleboy/scp-action@v0.1.3
