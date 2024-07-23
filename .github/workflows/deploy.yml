@@ -45,12 +45,6 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           source: "."
           target: "~/apps/porteFollio"
-
-      - name: Stop and remove the Docker container
-        run: |
-          docker ps -a -q --filter="ancestor=porte-follio" | xargs -r docker stop
-          docker ps -a -q --filter="ancestor=porte-follio" | xargs -r docker rm
-        
       
       - name: Deploy application via SSH
         uses: appleboy/ssh-action@v0.1.5
@@ -59,6 +53,9 @@ jobs:
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
+            docker stop porte-follio:lastest || true
+            docker rm porte-follio:lastest || true
+            docker rmi porte-follio:lastest || true
             cd ~/apps/porteFollio
-            docker build -t porte-follio .
-            docker run -d -p 80:80 porte-follio
+            docker build -t porte-follio:lastest .
+            docker run -d -p 80:80 porte-follio:lastest
