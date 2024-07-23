@@ -66,9 +66,6 @@ jobs:
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
-            docker stop porte-follio:lastest || true
-            docker rm porte-follio:lastest || true
-            docker rmi porte-follio:lastest || true
             cd ~/apps/porteFollio
             docker build -t porte-follio:lastest .
             docker run -d -p 80:80 porte-follio:lastest
