@@ -48,8 +48,7 @@ jobs:
 
       - name: Stop existing Docker container
         run: |
-          docker stop $(docker ps -q --filter ancestor=ghcr.io/${{ env.REPO_OWNER_LC }}/${{ env.REPO_NAME_LC }}:latest) || true
-          docker rm $(docker ps -a -q --filter ancestor=ghcr.io/${{ env.REPO_OWNER_LC }}/${{ env.REPO_NAME_LC }}:latest) || true
+          docker ps --filter "publish=80" -q | xargs -r docker stop | xargs -r docker rm
       
       - name: Deploy application via SSH
         uses: appleboy/ssh-action@v0.1.5
