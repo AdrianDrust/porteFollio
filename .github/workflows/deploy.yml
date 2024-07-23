@@ -47,17 +47,23 @@ jobs:
           target: "~/apps/porteFollio"
       
       - name: SSH and fetch Docker container ID
+        id: fetch_container_id
         uses: appleboy/ssh-action@v0.1.5
         with:
             host: ${{ secrets.DEPLOY_HOST }}
             username: ${{ secrets.DEPLOY_USERNAME }}
             key: ${{ secrets.DEPLOY_KEY }}
             script: |
-              container_id=$(docker ps --filter "publish=80" -q)
-              echo "container_id=${container_id}" >> $GITHUB_ENV
-      
+              echo "::set-output name=container_id::$(docker ps --filter "publish=80" -q)"
+  
       - name: Print Container ID
-        run: echo ${{ env.container_id }}
+        run: |
+          echo "Container ID: ${{ steps.fetch_container_id.outputs.container_id }}"
+  
+      - name: Stop and remove existing Docker container
+        run: |
+            docker stop ${{ steps.fetch_container_id.outputs.container_id }}
+            docker rm ${{ steps.fetch_container_id.outputs.container_id }}
 
       - name: stop existring docker container
         run : |
