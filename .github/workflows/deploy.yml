@@ -48,8 +48,7 @@ jobs:
 
       - name: Stop and remove the Docker container
         run: |
-            docker stop porte-follio || true
-            docker rm --force porte-follio || true
+          docker rm $(docker stop $(docker ps -a -q --filter="ancestor=porte-follio"))
         
       
       - name: Deploy application via SSH
