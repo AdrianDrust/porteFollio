@@ -16,6 +16,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      - name: Set lowercase repository owner and name
+        id: set_lowercase
+        run: |
+          echo "REPO_OWNER_LC=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+          echo "REPO_NAME_LC=$(echo ${{ github.event.repository.name }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v2
         with:
@@ -29,18 +35,14 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository_owner | lower }}/${{ github.event.repository.name | lower }}:latest
+          tags: ghcr.io/${{ env.REPO_OWNER_LC }}/${{ env.REPO_NAME_LC }}:latest
 
       - name: Display Last Three Characters of Secrets
         run: |
           echo "DEPLOY_HOST last 3 chars: ${${{ secrets.DEPLOY_HOST }}: -3}"
           echo "DEPLOY_USERNAME last 3 chars: ${${{ secrets.DEPLOY_USERNAME }}: -3}"
           echo "DEPLOY_KEY last 3 chars: ${${{ secrets.DEPLOY_KEY }}: -3}"
-        env:
-          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-          DEPLOY_USERNAME: ${{ secrets.DEPLOY_USERNAME }}
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-
+      
       - name: Copy files to remote server
         uses: appleboy/scp-action@v0.1.3
         with:
