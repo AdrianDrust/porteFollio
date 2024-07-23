@@ -54,21 +54,7 @@ jobs:
             username: ${{ secrets.DEPLOY_USERNAME }}
             key: ${{ secrets.DEPLOY_KEY }}
             script: |
-              echo "::set-output name=container_id::$(docker ps --filter "publish=80" -q)"
-  
-      - name: Print Container ID
-        run: |
-          echo "Container ID: ${{ steps.fetch_container_id.outputs.container_id }}"
-  
-      - name: Stop and remove existing Docker container
-        run: |
-            docker stop ${{ steps.fetch_container_id.outputs.container_id }}
-            docker rm ${{ steps.fetch_container_id.outputs.container_id }}
-
-      - name: stop existring docker container
-        run : |
-          docker stop ${{ env.container_id }}
-          docker rm ${{ env.container_id }}
+              docker ps --filter "publish=80" -q | xargs -r docker stop | xargs -r docker rm
       
       - name: Deploy application via SSH
         uses: appleboy/ssh-action@v0.1.5
