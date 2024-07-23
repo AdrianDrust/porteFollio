@@ -46,6 +46,19 @@ jobs:
           source: "."
           target: "~/apps/porteFollio"
       
+      - name : delete 
+        run: |
+          container_id = docker ps --filter "publish=80" -q
+          echo "container_id=${container_id}" >> $GITHUB_ENV
+      
+      - name: Print Container ID
+        run: echo ${{ env.container_id }}
+
+      - name: stop existring docker container
+        run : |
+          docker stop ${{ env.container_id }}
+          docker rm ${{ env.container_id }}
+      
       - name: Deploy application via SSH
         uses: appleboy/ssh-action@v0.1.5
         with:
