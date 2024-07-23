@@ -19,8 +19,8 @@ jobs:
       - name: Set lowercase repository owner and name
         id: set_lowercase
         run: |
-          echo "REPO_OWNER_LC=${{ github.repository_owner,, }}" >> $GITHUB_ENV
-          echo "REPO_NAME_LC=${{ github.event.repository.name,, }}" >> $GITHUB_ENV
+          echo "REPO_OWNER_LC=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+          echo "REPO_NAME_LC=$(echo ${{ github.event.repository.name }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v2
@@ -56,4 +56,3 @@ jobs:
             cd ~/apps/porteFollio
             docker build -t porte-follio .
             docker run -d -p 80:80 porte-follio
-
