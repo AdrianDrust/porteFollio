@@ -48,8 +48,7 @@ jobs:
       
       - name : delete 
         run: |
-          container_id=$(docker ps --filter "publish=80" -q)
-          echo "container_id=${container_id}" >> $GITHUB_ENV
+          echo "container_id=$(docker ps --filter "publish=80" -q)" >> $GITHUB_ENV
       
       - name: Print Container ID
         run: echo ${{ env.container_id }}
