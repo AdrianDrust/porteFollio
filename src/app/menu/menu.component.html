@@ -18,7 +18,7 @@
                         <div class="menu-titre-secondaire">Spécialisation Intelligence Artificielle</div>
                         <section class="section"></section>
                         <button class="custom-button">
-                            <span class="button-text">Réserver un appel avec Adrien</span>
+                            <span class="button-text">Découvrir Adrien</span>
                             <img src="https://www.larochellegc.com/wp-content/uploads/2022/04/IntelligenceArtificielleetattentes-925x590-c-center.jpg"
                                 alt="" class="button-avatar">
                         </button>
@@ -27,7 +27,9 @@
                 </div>
             </div>
 
+            <div id="projects">
 
+            
             <div class="container-cards">
                 <app-singlecard className="iCard-style3"
                     imageUrl="/assets/img/radiographie.webp"
@@ -56,6 +58,7 @@
                     cardTitle="" imageAlt="Beautiful Cloud Image" linkUrl="#" linkText="Read Full"
                     paragraphText="Mon text"></app-singlecard>
             </div>
+        </div>
 
             <div class="app-carrousel">
                 <app-caroussel></app-caroussel>
@@ -69,24 +72,27 @@
 
     </div>
 
-
-    <div class="formation">
+    
+    <div class="formation" id="formation">
         <section class="section"></section>
         <div class="formation">
             <app-formation></app-formation>
         </div>
 
-        <div class="formation">
+        <div class="formation" id="experience">
             <section class="section"></section>
             <app-experience></app-experience>
         </div>
+
+        <div class="formation" id="realisation">
+            <section class="section"></section>
+            <app-rea></app-rea>
+        </div>
     </div>
-    <!--
-    -->
-    <div class="formation">
+
+    <div class="formation" id="contact">
         <section class="section"></section>
         <app-contact></app-contact>
     </div>
-
 
 </div>

@@ -6,18 +6,19 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { CvComponent } from './cv/cv.component';
 import { ContactComponent } from './contact/contact.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent,  // Déclarez ici
+    CvComponent,    // Déclarez ici
+    ContactComponent, // Déclarez ici
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),  // Configurez les routes ici
-    
-    MenuComponent,     // Assurez-vous que tous les composants de route sont déclarés
-    CvComponent,
-    ContactComponent
+    RouterModule.forRoot(routes)  // Configurez les routes ici
   ],
   providers: [],
   bootstrap: [AppComponent]

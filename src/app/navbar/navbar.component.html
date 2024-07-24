@@ -8,17 +8,20 @@
       <div class="line3"></div>
     </div>
     <ul class="nav-links" [class.open]="isOpen">
-      <li><a href="#">Mes projets</a></li>
-      <li><a href="#">Ma formation</a></li>
-      <li><a href="#">Mon expérience</a></li>
-      <li class="is-displayed"><a href="#">Me contacter</a></li>
+      <li><a [routerLink]="['/menu']" fragment="projects">Mes projets</a>
+      </li>
+      <li>
+        <a [routerLink]="['/menu']" fragment="formation">Ma formation</a>
+      </li>
+      <li><a [routerLink]="['/menu']" fragment="experience">Mon expérience</a>
+      <li class="is-displayed">
+        <a [routerLink]="['/menu']" fragment="contact">Me contacter</a>
+      </li>
       <button class="custom-button is-displayed-button">
         <span class="button-text">Me contacter</span>
-        <!--
-        <img src="https://www.larochellegc.com/wp-content/uploads/2022/04/IntelligenceArtificielleetattentes-925x590-c-center.jpg"
-            alt="" class="button-avatar">
-      -->
     </button>
     </ul>
       </nav>
 <section class="section"></section>
+
+
