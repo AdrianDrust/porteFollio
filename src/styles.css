@@ -4,6 +4,10 @@
     --main-text-color: rgb(28, 28, 28);
     --secondary-text-color: rgb(255, 255, 255);
     --highlight-color: rgb(255, 188, 0);
+    --footer-bg: rgba(0, 31, 94, 0.9);
+  --footer-text: var(--secondary-text-color);
+  --footer-link: var(--highlight-color);
+  --spacing: 0.5rem;
   }
   
   .menu, body {

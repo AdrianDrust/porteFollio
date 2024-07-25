@@ -10,6 +10,7 @@ import { ExperienceComponent } from '../experience/experience.component';
 import { ContactComponent } from '../contact/contact.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReaComponent } from '../rea/rea.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-menu',
@@ -26,7 +27,8 @@ import { ReaComponent } from '../rea/rea.component';
     FormationComponent,
     ExperienceComponent,
     ContactComponent,
-    ReaComponent
+    ReaComponent,
+    FooterComponent
   ]
 })
 export class MenuComponent implements OnInit {

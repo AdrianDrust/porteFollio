@@ -1,0 +1,112 @@
+.footer-content {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: var(--spacing);
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing);
+    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur les petits écrans */
+  }
+  
+  .footer-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement */
+    text-align: center; /* Centre le texte */
+    margin-bottom: var(--spacing);
+  }
+  
+  .footer-section {
+    margin-bottom: var(--spacing);
+  }
+  
+  .footer-section h4 {
+    color: var(--highlight-color);
+    margin-bottom: calc(var(--spacing) / 2);
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: calc(var(--spacing) / 2);
+  }
+  
+  .footer-section a {
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section a:hover {
+    color: var(--highlight-color);
+  }
+  
+  .footer-form {
+    display: flex;
+    justify-content: center; /* Centre le formulaire horizontalement */
+    margin-top: calc(var(--spacing) / 2);
+  }
+  
+  .footer-form input[type="email"] {
+    padding: calc(var(--spacing) / 2);
+    border: none;
+    border-radius: 4px 0 0 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--footer-text);
+    max-width: 200px; /* Limite la largeur de l'input */
+  }
+  
+  .footer-form input[type="submit"] {
+    background-color: var(--highlight-color);
+    color: var(--main-text-color);
+    border: none;
+    padding: calc(var(--spacing) / 2) var(--spacing);
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer-form input[type="submit"]:hover {
+    background-color: rgb(255, 210, 67);
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center; /* Centre les liens sociaux horizontalement */
+    gap: var(--spacing);
+  }
+  
+  .social-links a {
+    color: var(--footer-text);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: var(--highlight-color);
+  }
+  
+  @media (max-width: 768px) {
+    .footer-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-column {
+      width: 100%;
+      margin-bottom: var(--spacing);
+    }
+    
+    .social-links {
+      justify-content: center;
+    }
+  }
